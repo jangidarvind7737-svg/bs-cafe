@@ -1,0 +1,17 @@
+{
+  "name": "bromo-momos",
+  "version": "1.0.0",
+  "description": "Bromo Momos website with a small Node backend.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "restaurant",
+    "momos",
+    "node"
+  ],
+  "author": "",
+  "license": "MIT"
+}

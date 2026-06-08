@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bromo Fast foods — Born in Jaipur, Loved Everywhere</title>
+  <meta name="description" content="Authentic Jaipur-style Fast foods, bold flavors, and good vibes. Come hang with us in Jaipur." />
+
+  <script>
+    (function () {
+      var t = localStorage.getItem('bromo-theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            forest: '#0A2E18',
+            'forest-dark': '#061B0E',
+            'forest-mid': '#0F3D24',
+            gold: '#4ADE80',
+            'gold-soft': '#86EFAC',
+            cream: '#ECFDF5',
+          },
+          fontFamily: {
+            display: ['Anton', 'Impact', 'sans-serif'],
+            body: ['Inter', 'Poppins', 'sans-serif'],
+          },
+          boxShadow: {
+            glow: '0 0 40px rgba(74, 222, 128, 0.25)',
+            card: '0 12px 40px rgba(0, 0, 0, 0.35)',
+          },
+        },
+      },
+    };
+  </script>
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="font-body antialiased overflow-x-hidden">
+
+  <!-- ═══════════════════ NAVBAR ═══════════════════ -->
+  <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="mt-4 flex items-center justify-between rounded-2xl border border-white/10 bg-forest-dark/70 px-5 py-3 backdrop-blur-md shadow-lg">
+        <!-- Logo -->
+        <a href="#home" class="flex items-center gap-2 group">
+          <span class="flex h-10 w-10 items-center justify-center rounded-full bg-gold text-forest-dark font-display text-lg leading-none transition-transform duration-300 group-hover:scale-110">B.S</span>
+          <span class="font-display text-xl tracking-wide text-white">Fast<span class="text-gold">Food</span></span>
+        </a>
+
+        <!-- Desktop Links -->
+        <ul class="hidden lg:flex items-center gap-1">
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#menu" class="nav-link">Menu</a></li>
+          <li><a href="#reviews" class="nav-link">Reviews</a></li>
+          <li><a href="#gallery" class="nav-link">Gallery</a></li>
+          <li><a href="#why-us" class="nav-link">Why Us</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+          <li><a href="./order.html" class="nav-link">Order Online</a></li>
+        </ul>
+
+        <!-- Theme + CTA + Mobile Toggle -->
+        <div class="flex items-center gap-3">
+          <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle dark mode">
+            <svg class="icon-sun" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+            <svg class="icon-moon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+          </button>
+          <a href="#contact" class="btn-cta hidden sm:inline-flex">Visit Us</a>
+          <button id="mobile-menu-btn" class="lg:hidden flex h-10 w-10 items-center justify-center rounded-xl border border-white/20 text-white" aria-label="Open menu">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="mobile-menu hidden lg:hidden mt-2 rounded-2xl border border-white/10 bg-forest-dark/95 backdrop-blur-md p-4">
+        <ul class="flex flex-col gap-1">
+          <li><a href="#home" class="mobile-nav-link">Home</a></li>
+          <li><a href="#about" class="mobile-nav-link">About</a></li>
+          <li><a href="#menu" class="mobile-nav-link">Menu</a></li>
+          <li><a href="#reviews" class="mobile-nav-link">Reviews</a></li>
+          <li><a href="#gallery" class="mobile-nav-link">Gallery</a></li>
+          <li><a href="#why-us" class="mobile-nav-link">Why Us</a></li>
+          <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+          <li><a href="./order.html" class="mobile-nav-link">Order Online</a></li>
+        </ul>
+        <a href="#contact" class="btn-cta mt-4 w-full justify-center">Visit Us</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ═══════════════════ HERO ═══════════════════ -->
+    <section id="home" class="relative min-h-screen flex items-center pt-28 pb-16 overflow-hidden">
+      <!-- Background accents -->
+      <div class="absolute inset-0 bg-gradient-to-br from-forest via-forest to-forest-dark"></div>
+      <div class="absolute top-20 right-0 h-96 w-96 rounded-full bg-gold/5 blur-3xl"></div>
+      <div class="absolute bottom-0 left-0 h-64 w-64 rounded-full bg-gold/8 blur-3xl"></div>
+
+      <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+          <!-- Left: Copy -->
+          <div class="reveal">
+            <span class="inline-block rounded-full border border-gold/40 bg-gold/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-gold mb-6">Jaipur's Favorite Fast food Spot</span>
+            <h1 class="font-display text-5xl sm:text-6xl lg:text-7xl xl:text-8xl leading-[0.95] tracking-tight uppercase text-white">
+              Steam.<br/>
+              <span class="text-gold">Bite</span><br/>
+              REPEAT.
+            </h1>
+            <p class="mt-6 max-w-md text-lg text-white/70 leading-relaxed">
+             Juicy burgers, crispy fries, loaded wraps, and bold Jaipur flavors — fast food done right, every single time.
+            </p>
+            <div class="mt-8 flex flex-wrap gap-4">
+              <a href="#menu" class="btn-cta">Explore Menu</a>
+              <a href="#about" class="btn-outline">Our Story</a>
+            </div>
+          </div>
+
+          <!-- Right: Hero Image -->
+          <div class="relative reveal reveal-delay-2 flex justify-center lg:justify-end">
+            <div class="relative">
+              <!-- Main circular image -->
+              <div class="hero-image-ring relative h-72 w-72 sm:h-80 sm:w-80 lg:h-[420px] lg:w-[420px]">
+                <img
+                  src="./Pic/Menu/img 3.png"
+                  alt="Steaming plate of Fast foods"
+                  class="h-full w-full rounded-full object-cover shadow-glow"
+                />
+              </div>
+              <!-- Floating badges -->
+              <div class="floating-badge absolute -top-2 right-4 sm:right-0 animate-float">
+                <span class="text-lg">🔥</span> Spicy King
+              </div>
+              <div class="floating-badge absolute top-1/3 -left-6 sm:-left-10 animate-float-delay">
+                <span class="text-lg">⭐</span> 4.8 Rating
+              </div>
+              <div class="floating-badge absolute -bottom-2 right-8 animate-float-delay-2">
+                <span class="text-lg">🥟</span> 50+ Items
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mini Stats Banner -->
+        <div class="reveal reveal-delay-3 mt-16 grid grid-cols-2 sm:grid-cols-4 gap-4">
+          <div class="stat-card">
+            <span class="font-display text-3xl text-gold">50+</span>
+            <span class="text-sm text-white/60 mt-1">Menu Items</span>
+          </div>
+          <div class="stat-card">
+            <span class="font-display text-3xl text-gold">10K+</span>
+            <span class="text-sm text-white/60 mt-1">Happy Customers</span>
+          </div>
+          <div class="stat-card">
+            <span class="font-display text-3xl text-gold">4.8</span>
+            <span class="text-sm text-white/60 mt-1">Star Rating</span>
+          </div>
+          <div class="stat-card">
+            <span class="font-display text-3xl text-gold">5</span>
+            <span class="text-sm text-white/60 mt-1">Years Strong</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════ ABOUT / ORIGIN STORY ═══════════════════ -->
+    <section id="about" class="py-24 bg-forest-dark">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <!-- Left: Image Card -->
+          <div class="reveal">
+            <div class="relative rounded-3xl overflow-hidden shadow-card aspect-[3/4] max-w-md mx-auto lg:mx-0">
+              <img
+                src="./Pic/gallery/img 6.png"
+                alt="Bromo Fast foods storefront in Jaipur"
+                class="h-full w-full object-cover"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-forest-dark/80 via-transparent to-transparent"></div>
+              <div class="absolute bottom-6 left-6 right-6">
+                <span class="inline-block rounded-full bg-gold px-3 py-1 text-xs font-bold uppercase text-forest-dark">Est. 2021</span>
+                <p class="mt-2 font-display text-2xl uppercase text-white">Pink City Roots</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Content -->
+          <div class="reveal reveal-delay-2">
+            <span class="text-gold text-sm font-semibold uppercase tracking-widest">Our Origin</span>
+            <h2 class="mt-3 font-display text-4xl sm:text-5xl lg:text-6xl uppercase leading-tight text-white">
+              Born in <span class="text-gold">Jaipur</span>,<br/>Built on Flavor
+            </h2>
+            <p class="mt-6 text-white/70 leading-relaxed text-lg">
+              What started as a tiny street cart in the heart of Jaipur has grown into a full-blown Fast food movement. We blend Himalayan tradition with Rajasthani spice — every dumpling is rolled by hand, steamed to perfection, and served with our signature chutneys.
+            </p>
+            <p class="mt-4 text-white/60 leading-relaxed">
+              No shortcuts. No frozen fillers. Just real ingredients, bold flavors, and the kind of warmth that makes strangers feel like regulars.
+            </p>
+
+            <!-- Pill highlight cards -->
+            <div class="mt-8 flex flex-col gap-3">
+              <div class="pill-card">
+                <span class="pill-icon">🌿</span>
+                <div>
+                  <p class="font-semibold text-white">100% Fresh Ingredients</p>
+                  <p class="text-sm text-white/50">Sourced daily from local markets</p>
+                </div>
+              </div>
+              <div class="pill-card">
+                <span class="pill-icon">👨‍🍳</span>
+                <div>
+                  <p class="font-semibold text-white">Hand-Rolled Daily</p>
+                  <p class="text-sm text-white/50">Every Fast food crafted by our expert team</p>
+                </div>
+              </div>
+              <div class="pill-card">
+                <span class="pill-icon">🌶️</span>
+                <div>
+                  <p class="font-semibold text-white">Jaipur Spice Blend</p>
+                  <p class="text-sm text-white/50">Our secret masala — can't buy it anywhere else</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════ MENU ═══════════════════ -->
+    <section id="menu" class="py-24 bg-forest">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="reveal text-center mb-12">
+          <span class="text-gold text-sm font-semibold uppercase tracking-widest">What We Serve</span>
+          <h2 class="mt-3 font-display text-4xl sm:text-5xl lg:text-6xl uppercase text-white">Our Menu</h2>
+          <p class="mt-4 text-white/60 max-w-xl mx-auto">Pick your poison — steamed, fried, tandoori, or drowned in gravy. All hits, no misses.</p>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="reveal reveal-delay-1 mb-10 -mx-4 px-4">
+          <div id="menu-filters" class="flex gap-3 overflow-x-auto pb-2 scrollbar-hide justify-start sm:justify-center">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="steamed">Steamed</button>
+            <button class="filter-btn" data-filter="fried">Fried</button>
+            <button class="filter-btn" data-filter="tandoori">Tandoori</button>
+            <button class="filter-btn" data-filter="gravy">Gravy</button>
+            <button class="filter-btn" data-filter="sides">Sides</button>
+          </div>
+        </div>
+
+        <!-- Product Grid -->
+        <div id="menu-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Cards injected by JS, with static fallback -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════ REVIEWS ═══════════════════ -->
+    <section id="reviews" class="py-24 bg-forest-dark">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="reveal text-center mb-12">
+          <span class="text-gold text-sm font-semibold uppercase tracking-widest">Social Proof</span>
+          <h2 class="mt-3 font-display text-4xl sm:text-5xl uppercase text-white">Real Reviews</h2>
+        </div>
+
+        <!-- Rating Summary -->
+        <div class="reveal reveal-delay-1 grid lg:grid-cols-2 gap-10 items-center mb-14">
+          <div class="text-center lg:text-left">
+            <div class="flex items-center justify-center lg:justify-start gap-4">
+              <span class="font-display text-7xl text-gold leading-none">4.8</span>
+              <div>
+                <div class="flex gap-1 text-gold text-xl">★★★★★</div>
+                <p class="text-white/50 text-sm mt-1">Based on 2,400+ reviews</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Star Distribution -->
+          <div class="space-y-3" id="star-bars">
+            <!-- Filled by JS -->
+          </div>
+        </div>
+
+        <!-- Review Slider -->
+        <div class="reveal reveal-delay-2 relative">
+          <div class="flex items-center gap-4">
+            <button id="review-prev" class="slider-btn shrink-0" aria-label="Previous review">
+              <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+            </button>
+
+            <div id="review-track" class="flex gap-5 overflow-hidden flex-1">
+              <!-- Review cards injected by JS -->
+            </div>
+
+            <button id="review-next" class="slider-btn shrink-0" aria-label="Next review">
+              <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+
+          <!-- Dots -->
+          <div id="review-dots" class="flex justify-center gap-2 mt-6"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════ GALLERY ═══════════════════ -->
+    <section id="gallery" class="py-24 bg-forest">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="reveal text-center mb-12">
+          <span class="text-gold text-sm font-semibold uppercase tracking-widest">See It To Believe It</span>
+          <h2 class="mt-3 font-display text-4xl sm:text-5xl uppercase text-white">Experience the Vibe</h2>
+        </div>
+
+        <!-- Gallery Tabs -->
+        <div class="reveal reveal-delay-1 flex justify-center gap-3 mb-10 flex-wrap">
+          <button class="gallery-tab active" data-gallery="all">All</button>
+          <button class="gallery-tab" data-gallery="food">Food</button>
+          <button class="gallery-tab" data-gallery="interior">Interior</button>
+          <button class="gallery-tab" data-gallery="lifestyle">Lifestyle</button>
+        </div>
+
+        <!-- Masonry Grid -->
+        <div id="gallery-grid" class="gallery-masonry reveal reveal-delay-2">
+          <!-- Injected by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════ WHY US ═══════════════════ -->
+    <section id="why-us" class="py-24 bg-forest-dark">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="reveal text-center mb-14">
+          <span class="text-gold text-sm font-semibold uppercase tracking-widest">What Sets Us Apart</span>
+          <h2 class="mt-3 font-display text-4xl sm:text-5xl uppercase text-white">The Bromo <span class="text-gold">Difference</span></h2>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div class="why-card reveal">
+            <div class="why-icon">🥟</div>
+            <h3 class="font-display text-xl uppercase tracking-wide text-white mt-4">Handcrafted Daily</h3>
+            <p class="mt-2 text-sm text-white/55 leading-relaxed">Every Fast food is rolled fresh each morning — never frozen, never reheated.</p>
+          </div>
+          <div class="why-card reveal reveal-delay-1">
+            <div class="why-icon">🌶️</div>
+            <h3 class="font-display text-xl uppercase tracking-wide text-white mt-4">Bold Jaipur Spice</h3>
+            <p class="mt-2 text-sm text-white/55 leading-relaxed">Our signature masala blend brings the heat and depth Rajasthan is known for.</p>
+          </div>
+          <div class="why-card reveal reveal-delay-2">
+            <div class="why-icon">⚡</div>
+            <h3 class="font-display text-xl uppercase tracking-wide text-white mt-4">Lightning Fast</h3>
+            <p class="mt-2 text-sm text-white/55 leading-relaxed">Steamed and served in under 10 minutes — because hunger doesn't wait.</p>
+          </div>
+          <div class="why-card reveal reveal-delay-1">
+            <div class="why-icon">🌱</div>
+            <h3 class="font-display text-xl uppercase tracking-wide text-white mt-4">Veg & Non-Veg</h3>
+            <p class="mt-2 text-sm text-white/55 leading-relaxed">Something for everyone — paneer, chicken, mutton, and seasonal specials.</p>
+          </div>
+          <div class="why-card reveal reveal-delay-2">
+            <div class="why-icon">💛</div>
+            <h3 class="font-display text-xl uppercase tracking-wide text-white mt-4">Community First</h3>
+            <p class="mt-2 text-sm text-white/55 leading-relaxed">We know your name, your order, and exactly how spicy you like it.</p>
+          </div>
+          <div class="why-card reveal reveal-delay-3">
+            <div class="why-icon">🏆</div>
+            <h3 class="font-display text-xl uppercase tracking-wide text-white mt-4">Award Winning</h3>
+            <p class="mt-2 text-sm text-white/55 leading-relaxed">Jaipur's Best Street Food 2024 — voted by the people who matter: you.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════ CONTACT ═══════════════════ -->
+    <section id="contact" class="py-24 bg-forest">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="reveal text-center mb-14">
+          <span class="text-gold text-sm font-semibold uppercase tracking-widest">Find Us</span>
+          <h2 class="mt-3 font-display text-4xl sm:text-5xl uppercase text-white">Come Hang <span class="text-gold">With Us</span></h2>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-10 items-start">
+          <!-- Left: Contact Info -->
+          <div class="reveal space-y-5">
+            <div class="contact-block">
+              <div class="flex items-start gap-4">
+                <span class="contact-icon">📍</span>
+                <div>
+                  <h3 class="font-semibold text-cream text-lg">Visit Us</h3>
+                  <p class="mt-1 text-white/60">Lalapura Rd, Jaipur <br/>Jaipur, Rajasthan 302021</p>
+                  <a href="https://maps.google.com/?q=Jaipur+Rajasthan" target="_blank" rel="noopener" class="contact-action-btn mt-4">Get Directions</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-block">
+              <div class="flex items-start gap-4">
+                <span class="contact-icon">📞</span>
+                <div>
+                  <h3 class="font-semibold text-cream text-lg">Call Us</h3>
+                  <p class="mt-1 text-white/60">+91 9571616527</p>
+                  <p class="text-sm text-white/40">Mon–Sun, 11 AM – 11 PM</p>
+                  <a href="tel:+919571616527" class="contact-action-btn mt-4">Call Now</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-block">
+              <div class="flex items-start gap-4">
+                <span class="contact-icon">✉️</span>
+                <div>
+                  <h3 class="font-semibold text-cream text-lg">Email Us</h3>
+                  <p class="mt-1 text-white/60">hello@broFast foodmos.com</p>
+                  <a href="mailto:hello@broFast foodmos.com" class="contact-action-btn mt-4">Email Us</a>
+                </div>
+              </div>
+            </div>
+
+            <form id="contact-form" class="contact-form" aria-label="Quick contact form">
+              <div class="grid sm:grid-cols-2 gap-4">
+                <label>
+                  Name
+                  <input name="name" autocomplete="name" required />
+                </label>
+                <label>
+                  Phone
+                  <input name="phone" autocomplete="tel" required />
+                </label>
+              </div>
+              <label>
+                Message
+                <textarea name="message" rows="3" placeholder="Ask about catering, parties, or today's specials."></textarea>
+              </label>
+              <p id="contact-status" class="form-status" aria-live="polite"></p>
+              <button class="btn-cta" type="submit">Send Message</button>
+            </form>
+          </div>
+
+          <!-- Right: Map -->
+          <div class="reveal reveal-delay-2">
+            <div class="rounded-2xl overflow-hidden shadow-card border border-white/10 h-[400px] lg:h-full min-h-[400px]">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d227748.3825624477!2d75.6504693!3d26.9124336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db5dfaae6acd9%3A0x3a3aac570f612756!2sJaipur%2C%20Rajasthan!5e0!3m2!1sen!2sin!4v1717843200000!5m2!1sen!2sin"
+                width="100%"
+                height="100%"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Bromo Fast foods location on Google Maps"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════ FOOTER ═══════════════════ -->
+  <footer class="bg-forest-dark border-t border-white/10 py-16">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+        <!-- Brand -->
+        <div>
+          <a href="#home" class="flex items-center gap-2">
+            <span class="flex h-9 w-9 items-center justify-center rounded-full bg-gold text-forest-dark font-display text-base">B</span>
+            <span class="font-display text-lg tracking-wide">BROMO<span class="text-gold">Fast foodS</span></span>
+          </a>
+          <p class="mt-4 text-sm text-white/45 leading-relaxed">Jaipur-born, flavor-driven Fast foods that bring people together. Steam it, dip it, love it.</p>
+          <div class="mt-5 flex gap-3">
+            <a href="#" class="social-link" aria-label="Instagram">
+              <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Facebook">
+              <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Twitter">
+              <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="font-display text-sm uppercase tracking-widest text-gold mb-4">Quick Links</h4>
+          <ul class="space-y-2.5">
+            <li><a href="#home" class="footer-link">Home</a></li>
+            <li><a href="#about" class="footer-link">About</a></li>
+            <li><a href="#menu" class="footer-link">Menu</a></li>
+            <li><a href="#reviews" class="footer-link">Reviews</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-display text-sm uppercase tracking-widest text-gold mb-4">Explore</h4>
+          <ul class="space-y-2.5">
+            <li><a href="#gallery" class="footer-link">Gallery</a></li>
+            <li><a href="#why-us" class="footer-link">Why Us</a></li>
+            <li><a href="#contact" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Hours -->
+        <div>
+          <h4 class="font-display text-sm uppercase tracking-widest text-gold mb-4">Hours</h4>
+          <ul class="space-y-2 text-sm text-white/45">
+            <li class="flex justify-between"><span>Mon – Thu</span><span class="text-white/70">11 AM – 10 PM</span></li>
+            <li class="flex justify-between"><span>Fri – Sat</span><span class="text-white/70">11 AM – 11 PM</span></li>
+            <li class="flex justify-between"><span>Sunday</span><span class="text-white/70">12 PM – 10 PM</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-sm text-white/35">&copy; 2026 Bromo Fast foods. All rights reserved.</p>
+        <p class="text-sm text-white/35">Made with 🥟 in Jaipur</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
